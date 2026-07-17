@@ -1,0 +1,20 @@
+@use "variables"; /* Importa las variables definidas en variables.scss */
+
+body {
+  font-family: variables.$font-body;
+  background: variables.$color-bg-page;
+  color: variables.$color-text-muted;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, h4 {
+  font-family: variables.$font-headings;
+  color: variables.$color-secondary;
+  margin: 0;
+}

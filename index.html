@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartBudget - Tu dinero bajo control</title>
+
+  <!-- CDN de Bootstrap 4.6.2 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+  <!-- Enlace al archivo CSS  -->
+  <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+
+  <!-- Bloque Principal: smart-budget (Contenedor con Borde y Sombra) -->
+  <div class="smart-budget container">
+
+    <!-- Bloque: header -->
+    <header class="header">
+      <a href="#" class="header__logo">
+        <!-- Icono de logo SVG vectorizado (hojas y crecimiento) -->
+        <svg class="header__logo-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M16 4C16 4 11 12 11 17C11 22 13 24 16 24C19 24 21 22 21 17C21 12 16 4 16 4Z"
+            fill="url(#logoGrad1)" />
+          <path d="M16 11C16 11 9 16 9 20C9 24 11 26 14 26C17 26 17 22 17 20C17 17 16 11 16 11Z" fill="url(#logoGrad2)"
+            opacity="0.85" />
+          <path d="M16 11C16 11 23 16 23 20C23 24 21 26 18 26C15 26 15 22 15 20C15 17 16 11 16 11Z"
+            fill="url(#logoGrad3)" opacity="0.85" />
+          <circle cx="16" cy="18" r="2.5" fill="#ffffff" />
+          <defs>
+            <linearGradient id="logoGrad1" x1="16" y1="4" x2="16" y2="24" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ff7e5f" />
+              <stop offset="1" stop-color="#ff6b4a" />
+            </linearGradient>
+            <linearGradient id="logoGrad2" x1="13" y1="11" x2="13" y2="26" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#feb47b" />
+              <stop offset="1" stop-color="#ff7e5f" />
+            </linearGradient>
+            <linearGradient id="logoGrad3" x1="19" y1="11" x2="19" y2="26" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ff8a65" />
+              <stop offset="1" stop-color="#e64a19" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span class="header__logo-text">Smart<span>Budget</span></span>
+      </a>
+
+      <!-- Menú de navegación -->
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link header__nav-link--active">Inicio</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Funciones</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Precios</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link">Blog</a>
+          </li>
+          <li class="header__nav-item">
+            <a href="#" class="header__nav-link header__nav-link--login">Iniciar Sesión</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Bloque: hero (Sección Hero utilizando Grid de Bootstrap 4) -->
+    <section class="hero row align-items-center">
+      <!-- Elemento: content y columna Bootstrap 4 -->
+      <div class="hero__content col-lg-6">
+        <h1 class="hero__title">¡Tu dinero bajo control y sin estrés!</h1>
+        <p class="hero__description">Organiza tus finanzas, ahorra más y alcanza tus metas. Una app simple para todos tus dispositivos.</p>
+        <a href="#" class="hero__cta">Pruébalo gratis</a>
+      </div>
+
+      <!-- Elemento: graphic y columna Bootstrap 4 -->
+      <div class="hero__graphic col-lg-6">
+        <svg class="hero__svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <!-- Círculos de fondo con gradientes -->
+          <circle cx="370" cy="130" r="45" fill="url(#circ1)" opacity="0.15" />
+          <circle cx="430" cy="270" r="30" fill="url(#circ2)" opacity="0.2" />
+          <circle cx="150" cy="310" r="35" fill="url(#circ3)" opacity="0.15" />
+
+          <!-- Cintas curvas del prototipo -->
+          <path d="M120 380 C 150 250, 220 200, 280 280 C 340 360, 420 250, 450 150" stroke="url(#ribbon1)"
+            stroke-width="26" stroke-linecap="round" fill="none" />
+          <path d="M190 400 C 220 300, 280 250, 320 320 C 360 390, 400 320, 420 200" stroke="url(#ribbon2)"
+            stroke-width="16" stroke-linecap="round" fill="none" opacity="0.8" />
+          <path d="M150 200 C 180 250, 250 380, 310 240 C 340 180, 360 140, 420 120" stroke="url(#ribbon3)"
+            stroke-width="14" stroke-linecap="round" fill="none" opacity="0.7" />
+
+          <!-- Esferas con volumen (gradientes radiales) -->
+          <circle cx="120" cy="380" r="28" fill="url(#orb1)" />
+          <circle cx="300" cy="240" r="22" fill="url(#orb2)" />
+          <circle cx="360" cy="450" r="16" fill="url(#orb3)" />
+          <circle cx="430" cy="180" r="24" fill="url(#orb4)" />
+
+          <!-- Flecha de crecimiento en diagonal -->
+          <path d="M300 240 L 440 130" stroke="#ff6b4a" stroke-width="8" stroke-linecap="round" />
+          <path d="M410 130 L 440 130 L 440 160" stroke="#ff6b4a" stroke-width="8" stroke-linecap="round"
+            stroke-linejoin="round" />
+
+          <!-- Ilustración de hojas decorativas en el lado derecho -->
+          <g transform="translate(410, 280) scale(0.8)">
+            <path d="M10 80 Q 20 40, 25 0" stroke="#81c784" stroke-width="4" fill="none" />
+            <path d="M25 0 Q 35 10, 25 20 Q 15 10, 25 0" fill="#81c784" />
+            <path d="M18 30 Q 30 35, 30 45 Q 18 50, 18 30" fill="#e57373" />
+            <path d="M22 55 Q 5 60, 5 70 Q 22 75, 22 55" fill="#64b5f6" />
+          </g>
+
+          <!-- Defs para gradientes -->
+          <defs>
+            <linearGradient id="circ1" x1="325" y1="85" x2="415" y2="175" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#feb47b" />
+              <stop offset="1" stop-color="#ff7e5f" />
+            </linearGradient>
+            <linearGradient id="circ2" x1="400" y1="240" x2="460" y2="300" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#64b5f6" />
+              <stop offset="1" stop-color="#303f9f" />
+            </linearGradient>
+            <linearGradient id="circ3" x1="115" y1="275" x2="185" y2="345" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#ff8a65" />
+              <stop offset="1" stop-color="#d84315" />
+            </linearGradient>
+            <linearGradient id="ribbon1" x1="120" y1="380" x2="450" y2="150" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#ff8a65" />
+              <stop offset="50%" stop-color="#feb47b" />
+              <stop offset="100%" stop-color="#64b5f6" />
+            </linearGradient>
+            <linearGradient id="ribbon2" x1="190" y1="400" x2="420" y2="200" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#feb47b" />
+              <stop offset="100%" stop-color="#ff7e5f" />
+            </linearGradient>
+            <linearGradient id="ribbon3" x1="150" y1="200" x2="420" y2="120" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#64b5f6" />
+              <stop offset="100%" stop-color="#4fc3f7" />
+            </linearGradient>
+            <radialGradient id="orb1" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#ff8a65" />
+              <stop offset="100%" stop-color="#d84315" />
+            </radialGradient>
+            <radialGradient id="orb2" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#ffd54f" />
+              <stop offset="100%" stop-color="#ff8f00" />
+            </radialGradient>
+            <radialGradient id="orb3" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#ff8a65" />
+              <stop offset="100%" stop-color="#c62828" />
+            </radialGradient>
+            <radialGradient id="orb4" cx="40%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#4fc3f7" />
+              <stop offset="100%" stop-color="#1565c0" />
+            </radialGradient>
+          </defs>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Bloque: features (Sección de Características utilizando Grid de Bootstrap 4) -->
+    <section class="features row">
+
+      <!-- Card 1: Planifica fácil (Columna Bootstrap 4) -->
+      <div class="col-md-6 col-lg-3">
+        <a href="#" class="feature-card">
+          <div class="feature-card__icon feature-card__icon--yellow">
+            <!-- Icono de calendario/documento con reloj -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffb74d" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+              <circle cx="16" cy="16" r="4" fill="#ffe0b2" stroke="#ffb74d" stroke-width="1.5" />
+              <polyline points="16 14 16 16 17.5 16.5" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Planifica fácil</h3>
+          <p class="feature-card__text">Planifica tus gastos e ingresos de manera semanal o mensual.</p>
+        </a>
+      </div>
+
+      <!-- Card 2: Ahorra inteligente (Columna Bootstrap 4) -->
+      <div class="col-md-6 col-lg-3">
+        <a href="#" class="feature-card">
+          <div class="feature-card__icon feature-card__icon--pink">
+            <!-- Icono de alcancía / cerdito -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ff8a65" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M19 5c-1.5 0-2.8 1.4-3 2-1-.6-2.5-1-4-1-4.4 0-8 3.1-8 7 0 1.4.5 2.7 1.5 3.5L5 20h3l1.5-2c1 .4 2.2.5 3.5.5 4.4 0 8-3.1 8-7 0-.3 0-.7-.1-1 .7-.2 2.1-1.5 2.1-3 0-1.7-1.8-3-4-3z" />
+              <circle cx="8" cy="11" r="1.5" fill="#ff8a65" />
+              <path d="M12 5v2" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Ahorra inteligente</h3>
+          <p class="feature-card__text">Accede a las mejores opciones de ahorro en inversiones a corto y largo plazo.
+          </p>
+        </a>
+      </div>
+
+      <!-- Card 3: Visión clara (Columna Bootstrap 4) -->
+      <div class="col-md-6 col-lg-3">
+        <a href="#" class="feature-card">
+          <div class="feature-card__icon feature-card__icon--orange">
+            <!-- Icono de lupa enfocando -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#f57c51" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              <circle cx="11" cy="11" r="3" fill="#ffccbc" stroke="#f57c51" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Tendencias</h3>
+          <p class="feature-card__text">Revisa las tendencias bursátiles en todos los mercados.</p>
+        </a>
+      </div>
+
+      <!-- Card 4: Alcanza metas (Columna Bootstrap 4) -->
+      <div class="col-md-6 col-lg-3">
+        <a href="#" class="feature-card">
+          <div class="feature-card__icon feature-card__icon--blue">
+            <!-- Icono de bandera en la cima / montaña -->
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#64b5f6" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path
+                d="M4 22V4c0-.5.2-1 .6-1.4C5 2.2 5.5 2 6 2h12c.5 0 1 .2 1.4.6.4.4.6.9.6 1.4v10c0 .5-.2 1-.6 1.4-.4.4-.9.6-1.4.6H6l-2 2z" />
+              <path d="M18 10H6" stroke-width="1.5" />
+              <path d="M12 6H6" stroke-width="1.5" />
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Indicadores económicos</h3>
+          <p class="feature-card__text">Conoce el estado de los indicadores económicos actualizados en tiempo real.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Bloque: footer -->
+    <footer class="footer">
+      <span class="footer__logo">SmartBudget</span>
+      <a href="#" class="footer__link">www.smartbudgets.com</a>
+    </footer>
+
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,341 @@
+/* Custom Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at 80% 20%, #ffe9d2 0%, #fcd2c2 100%);
+  color: #64748b;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2.5rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  color: #19253d;
+  margin: 0;
+}
+
+/* Bloque: Contenedor principal con borde y sombra (smart-budget) */
+.smart-budget {
+  background-color: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 1100px;
+  padding: 3rem 4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.smart-budget::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  left: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255, 107, 74, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Bloque: Encabezado (header) */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.header__logo:hover {
+  text-decoration: none;
+}
+
+.header__logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header__logo-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: #ff6b4a;
+  letter-spacing: -0.5px;
+}
+
+.header__logo-text span {
+  color: #19253d;
+  font-weight: 500;
+}
+
+.header__nav-list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header__nav-link {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #64748b;
+  transition: color 0.2s ease;
+}
+
+.header__nav-link:hover {
+  color: #ff6b4a;
+  text-decoration: none;
+}
+
+.header__nav-link--active {
+  color: #ff6b4a;
+  font-weight: 600;
+}
+
+.header__nav-link--login {
+  padding: 0.6rem 1.4rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  color: #19253d;
+  transition: all 0.2s ease;
+}
+
+.header__nav-link--login:hover {
+  background-color: #ff6b4a;
+  color: #ffffff;
+  border-color: #ff6b4a;
+}
+
+/* Bloque: Sección Hero (hero) */
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.hero__title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+}
+
+.hero__description {
+  font-size: 1.05rem;
+  color: #64748b;
+  line-height: 1.6;
+  max-width: 480px;
+}
+
+.hero__cta {
+  display: inline-block;
+  text-decoration: none;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 100%);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 50px;
+  box-shadow: 0 10px 20px rgba(255, 110, 76, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hero__cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(255, 110, 76, 0.35);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.hero__graphic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero__svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+}
+
+/* Bloque: Sección de Características (features) */
+.features {
+  z-index: 1;
+}
+
+/* Bloque: Tarjeta de Característica (feature-card) */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  text-decoration: none;
+  background-color: #fafafa;
+  border-color: rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+  transform: translateY(-4px);
+}
+
+.feature-card:hover .feature-card__title {
+  color: #ff6b4a;
+}
+
+.feature-card--active {
+  background-color: #fff9f6;
+  border-color: rgba(255, 107, 74, 0.2);
+}
+
+.feature-card--active .feature-card__title {
+  color: #ff6b4a;
+}
+
+.feature-card__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.feature-card__icon--yellow {
+  background-color: #fff9db;
+}
+
+.feature-card__icon--pink {
+  background-color: #ffe8e2;
+}
+
+.feature-card__icon--orange {
+  background-color: #ffeedb;
+}
+
+.feature-card__icon--blue {
+  background-color: #e7f5ff;
+}
+
+.feature-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.feature-card__text {
+  font-size: 0.85rem;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+
+/* Bloque: Footer (footer) */
+.footer {
+  border-top: 1px solid #f1f5f9;
+  padding-top: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+}
+
+.footer__logo {
+  font-weight: 700;
+  color: #19253d;
+  font-size: 1.1rem;
+}
+
+.footer__link {
+  color: #64748b;
+  text-decoration: none;
+}
+
+.footer__link:hover {
+  color: #ff6b4a;
+  text-decoration: none;
+}
+
+/* Diseño Adaptable (Responsive) con adaptaciones sobre la grilla de Bootstrap */
+@media (max-width: 992px) {
+  body {
+    padding: 1.5rem;
+  }
+  .smart-budget {
+    padding: 2rem 2.5rem;
+    gap: 2.5rem;
+  }
+  .hero {
+    text-align: center;
+  }
+  .hero__content {
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+  .hero__title {
+    font-size: 2.8rem;
+  }
+  .feature-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .smart-budget {
+    padding: 1.5rem;
+  }
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}

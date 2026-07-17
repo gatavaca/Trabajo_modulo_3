@@ -1,0 +1,315 @@
+/* Importar variables personalizadas y mixins de Sass*/
+@use "variables";
+@use "mixins";
+
+// Bloque: Contenedor principal con borde y sombra (smart-budget)
+.smart-budget {
+  background-color: variables.$color-container-bg;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 1100px;
+  padding: 3rem 4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255,107,74,0.06) 0%, rgba(255,255,255,0) 70%);
+    z-index: 0;
+    pointer-events: none;
+  }
+}
+
+// Bloque: Encabezado (header)
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  position: relative;
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__logo-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  &__logo-text {
+    font-family: variables.$font-headings;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: variables.$color-primary;
+    letter-spacing: -0.5px;
+
+    span {
+      color: variables.$color-secondary;
+      font-weight: 500;
+    }
+  }
+
+  &__nav-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__nav-link {
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: variables.$color-text-muted;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: variables.$color-primary;
+      text-decoration: none;
+    }
+
+    &--active {
+      color: variables.$color-primary;
+      font-weight: 600;
+    }
+
+    &--login {
+      padding: 0.6rem 1.4rem;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 50px;
+      color: variables.$color-secondary;
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: variables.$color-primary;
+        color: #ffffff;
+        border-color: variables.$color-primary;
+      }
+    }
+  }
+}
+
+// Bloque: Sección Hero (hero)
+.hero {
+  position: relative;
+  z-index: 1;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+
+  &__title {
+    font-size: 3.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -1.5px;
+  }
+
+  &__description {
+    font-size: 1.05rem;
+    color: variables.$color-text-muted;
+    line-height: 1.6;
+    max-width: 480px;
+  }
+
+  &__cta {
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 2.2rem;
+    background: variables.$color-primary-grad;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 600;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(255, 110, 76, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(255, 110, 76, 0.35);
+      color: #ffffff;
+      text-decoration: none;
+    }
+  }
+
+  &__graphic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__svg {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+  }
+}
+
+// Bloque: Sección de Características (features)
+.features {
+  z-index: 1;
+}
+
+// Bloque: Tarjeta de Características (feature-card)
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  border-radius: 18px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    text-decoration: none;
+    background-color: #fafafa;
+    border-color: rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.04);
+    transform: translateY(-4px);
+
+    .feature-card__title {
+      color: variables.$color-primary;
+    }
+  }
+
+  &--active {
+    background-color: #fff9f6;
+    border-color: rgba(255, 107, 74, 0.2);
+    
+    .feature-card__title {
+      color: variables.$color-primary;
+    }
+  }
+
+  &__icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.4rem;
+
+    &--yellow {
+      background-color: #fff9db;
+    }
+    &--pink {
+      background-color: #ffe8e2;
+    }
+    &--orange {
+      background-color: #ffeedb;
+    }
+    &--blue {
+      background-color: #e7f5ff;
+    }
+  }
+
+  &__title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    transition: color 0.2s ease;
+  }
+
+  &__text {
+    font-size: 0.85rem;
+    color: variables.$color-text-muted;
+    line-height: 1.5;
+  }
+}
+
+
+// Bloque: Footer (footer)
+.footer {
+  border-top: 1px solid variables.$color-border;
+  padding-top: 1.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #94a3b8;
+
+  &__logo {
+    font-weight: 700;
+    color: variables.$color-secondary;
+    font-size: 1.1rem;
+  }
+
+  &__link {
+    color: variables.$color-text-muted;
+    text-decoration: none;
+    
+    &:hover {
+      color: variables.$color-primary;
+      text-decoration: none;
+    }
+  }
+}
+
+// Diseño Adaptable (Responsive) con adaptaciones sobre la grilla de Bootstrap
+@media (max-width: 992px) {
+  body {
+    padding: 1.5rem;
+  }
+  .smart-budget {
+    padding: 2rem 2.5rem;
+    gap: 2.5rem;
+  }
+  .hero {
+    text-align: center;
+    
+    &__content {
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    &__title {
+      font-size: 2.8rem;
+    }
+  }
+  .feature-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .smart-budget {
+    padding: 1.5rem;
+  }
+  .header {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .footer {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+}
+
+
